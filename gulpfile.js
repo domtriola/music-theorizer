@@ -10,7 +10,7 @@ gulp.task('default', ['build-dev']);
  * Development
  */
 gulp.task('build-dev', ['webpack:build-dev', 'sass:build-dev'], () => {
-  gulp.watch(['app/**/*.js'], ['webpack:build-dev']);
+  gulp.watch(['app/**/*.js', 'app/**/*.jsx'], ['webpack:build-dev']);
   gulp.watch(['app/client/style/scss/**/*.scss'], ['sass:build-dev']);
 });
 
