@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "echo \"Error: no start command specified\" && exit 1",
+    "start": "node app/server/index.js",
     "build-dev": "gulp build-dev",
     "build-prod": "gulp build-prod"
   },
@@ -38,6 +38,7 @@
     "webpack": "^3.8.1"
   },
   "dependencies": {
+    "express": "^4.16.2",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
