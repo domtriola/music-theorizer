@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import { HashRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import App from './App';
 
@@ -11,9 +11,9 @@ const propTypes = {
 
 const Root = ({ store }) => (
   <Provider store={store}>
-    <HashRouter>
+    <BrowserRouter>
       <Route component={App} />
-    </HashRouter>
+    </BrowserRouter>
   </Provider>
 );
 
