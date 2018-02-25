@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "find ./app -name '*.test.js' | xargs mocha",
     "start": "nodemon app/server/index.js --watch app/server",
     "build-dev": "gulp build-dev",
     "build-prod": "gulp build-prod"

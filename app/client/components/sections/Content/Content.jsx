@@ -7,7 +7,6 @@ export default () => (
   <div className="Content">
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route component={<div>something</div>} />
     </Switch>
   </div>
 );
