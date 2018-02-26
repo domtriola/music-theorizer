@@ -12,5 +12,15 @@ describe('generateScale()', () => {
       generateScale('G#', 'minor'),
       ['G#', 'A#', 'B', 'C#', 'D#', 'E', 'F#', 'G#'],
     );
+
+    assert.deepEqual(
+      generateScale('A', 'harmonic minor'),
+      ['A', 'B', 'C', 'D', 'E', 'F', 'G#', 'A'],
+    );
+
+    assert.deepEqual(
+      generateScale('A', 'melodic minor'),
+      ['A', 'B', 'C', 'D', 'E', 'F#', 'G#', 'A'],
+    );
   });
 });
