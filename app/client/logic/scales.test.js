@@ -1,25 +1,25 @@
 import assert from 'assert';
-import { generateScale } from './scales';
+import { generateNotesFromScale } from './scales';
 
-describe('generateScale()', () => {
+describe('generateNotesFromScale()', () => {
   it('should return the correct scales', () => {
     assert.deepEqual(
-      generateScale('C', 'major'),
+      generateNotesFromScale('C', 'major'),
       ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'],
     );
 
     assert.deepEqual(
-      generateScale('G#', 'minor'),
+      generateNotesFromScale('G#', 'minor'),
       ['G#', 'A#', 'B', 'C#', 'D#', 'E', 'F#', 'G#'],
     );
 
     assert.deepEqual(
-      generateScale('A', 'harmonic minor'),
+      generateNotesFromScale('A', 'harmonic minor'),
       ['A', 'B', 'C', 'D', 'E', 'F', 'G#', 'A'],
     );
 
     assert.deepEqual(
-      generateScale('A', 'melodic minor'),
+      generateNotesFromScale('A', 'melodic minor'),
       ['A', 'B', 'C', 'D', 'E', 'F#', 'G#', 'A'],
     );
   });

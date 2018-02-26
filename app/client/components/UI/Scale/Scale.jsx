@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { generateScale } from '../../../logic/scales';
+import { generateNotesFromScale } from '../../../logic/scales';
 
 import Note from '../Note/Note';
 
@@ -13,7 +13,7 @@ const propTypes = {
 
 const Scale = ({ musicalKey, scale }) => (
   <div className="Scale">
-    {generateScale(musicalKey, scale).map((note, i) => (
+    {generateNotesFromScale(musicalKey, scale).map((note, i) => (
       <Note key={note + String(i)} note={note} />
     ))}
   </div>

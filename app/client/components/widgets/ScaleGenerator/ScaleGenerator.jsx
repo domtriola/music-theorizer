@@ -1,25 +1,46 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import KEYS from '../../../constants/keys';
 import SCALES from '../../../constants/scales';
 
+import { updateScale } from '../../../actions/scale';
+
 import Select from '../../ui/forms/Select/Select';
 import Scale from '../../ui/Scale/Scale';
 
-class ScaleGenerator extends React.Component {
-  constructor() {
-    super();
+const mapStateToProps = ({ scale }) => ({
+  musicalKey: scale.get('key'),
+  scale: scale.get('scale'),
+  notes: scale.get('notes'),
+});
 
-    this.state = {
-      key: 'C',
-      scale: 'major',
-    };
+const mapDispatchToProps = dispatch => ({
+  updateScale: (key, scale) => dispatch(updateScale(key, scale)),
+});
+
+const { string, func } = PropTypes;
+const propTypes = {
+  musicalKey: string.isRequired,
+  scale: string.isRequired,
+  updateScale: func.isRequired,
+};
+
+class ScaleGenerator extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.updateKey = this.updateKey.bind(this);
+    this.updateScale = this.updateScale.bind(this);
   }
 
-  update(field) {
-    return (value) => {
-      this.setState({ [field]: value });
-    };
+  updateKey(key) {
+    this.props.updateScale(key, this.props.scale);
+  }
+
+  updateScale(scale) {
+    this.props.updateScale(this.props.musicalKey, scale);
   }
 
   render() {
@@ -31,22 +52,27 @@ class ScaleGenerator extends React.Component {
         <Select
           name="key"
           options={KEYS}
-          value={this.state.key}
-          onChange={this.update('key')}
+          value={this.props.musicalKey}
+          onChange={this.updateKey}
         />
         <Select
           name="scale"
           options={Object.keys(SCALES)}
-          value={this.state.scale}
-          onChange={this.update('scale')}
+          value={this.props.scale}
+          onChange={this.updateScale}
         />
         <Scale
-          musicalKey={this.state.key}
-          scale={this.state.scale}
+          musicalKey={this.props.musicalKey}
+          scale={this.props.scale}
         />
       </div>
     );
   }
 }
 
-export default ScaleGenerator;
+ScaleGenerator.propTypes = propTypes;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(ScaleGenerator);

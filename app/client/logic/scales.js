@@ -1,7 +1,7 @@
 import KEYS from '../constants/keys';
 import SCALES from '../constants/scales';
 
-export const generateScale = (root, scale) => {
+export const generateNotesFromScale = (root, scale) => {
   const rootIndex = KEYS.indexOf(root);
 
   const result = [root];
@@ -21,7 +21,7 @@ export const generateAllScales = () => {
 
   KEYS.forEach((key) => {
     Object.keys(SCALES).forEach((scale) => {
-      result[`${key} ${scale}`] = generateScale(key, scale);
+      result[`${key} ${scale}`] = generateNotesFromScale(key, scale);
     });
   });
 
