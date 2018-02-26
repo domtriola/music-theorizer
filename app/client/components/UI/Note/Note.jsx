@@ -7,7 +7,7 @@ const propTypes = {
 };
 
 const Note = ({ note }) => (
-  <div>
+  <div className="Note">
     {note}
   </div>
 );

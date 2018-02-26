@@ -12,7 +12,7 @@ const propTypes = {
 };
 
 const Scale = ({ musicalKey, scale }) => (
-  <div>
+  <div className="Scale">
     {generateScale(musicalKey, scale).map((note, i) => (
       <Note key={note + String(i)} note={note} />
     ))}
