@@ -3,8 +3,8 @@ import React from 'react';
 import KEYS from '../../../constants/keys';
 import { SCALES } from '../../../constants/scales';
 
-import Select from '../../UI/forms/Select/Select';
-import Scale from '../../UI/Scale/Scale';
+import Select from '../../ui/forms/Select/Select';
+import Scale from '../../ui/Scale/Scale';
 
 class ScaleGenerator extends React.Component {
   constructor() {
