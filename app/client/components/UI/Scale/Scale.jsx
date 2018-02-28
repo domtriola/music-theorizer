@@ -1,19 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { generateNotesFromScale } from '../../../logic/scales';
-
 import Note from '../Note/Note';
 
-const { string } = PropTypes;
+const { string, arrayOf } = PropTypes;
 const propTypes = {
-  musicalKey: string.isRequired,
-  scale: string.isRequired,
+  notes: arrayOf(string).isRequired,
 };
 
-const Scale = ({ musicalKey, scale }) => (
+const Scale = ({ notes }) => (
   <div className="Scale">
-    {generateNotesFromScale(musicalKey, scale).map((note, i) => (
+    {notes.map((note, i) => (
       <Note key={note + String(i)} note={note} />
     ))}
   </div>

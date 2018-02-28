@@ -20,10 +20,11 @@ const mapDispatchToProps = dispatch => ({
   updateScale: (key, scale) => dispatch(updateScale(key, scale)),
 });
 
-const { string, func } = PropTypes;
+const { string, arrayOf, func } = PropTypes;
 const propTypes = {
   musicalKey: string.isRequired,
   scale: string.isRequired,
+  notes: arrayOf(string).isRequired,
   updateScale: func.isRequired,
 };
 
@@ -61,10 +62,7 @@ class ScaleGenerator extends React.Component {
           value={this.props.scale}
           onChange={this.updateScale}
         />
-        <Scale
-          musicalKey={this.props.musicalKey}
-          scale={this.props.scale}
-        />
+        <Scale notes={this.props.notes} />
       </div>
     );
   }
