@@ -1,12 +1,15 @@
+import merge from 'lodash/merge';
+
 import KEYS from '../constants/keys';
 import SCALES from '../constants/scales';
+import MODES from '../constants/modes';
 
-export const generateNotesFromScale = (root, scale) => {
+export const generateNotesFromScaleOrMode = (root, scale) => {
   const rootIndex = KEYS.indexOf(root);
 
   const result = [root];
   let stepTotal = 0;
-  SCALES[scale].forEach((step) => {
+  merge(SCALES, MODES)[scale].forEach((step) => {
     stepTotal += step;
     const nextNote = KEYS[(rootIndex + stepTotal) % KEYS.length];
 
@@ -21,7 +24,7 @@ export const generateAllScales = () => {
 
   KEYS.forEach((key) => {
     Object.keys(SCALES).forEach((scale) => {
-      result[`${key} ${scale}`] = generateNotesFromScale(key, scale);
+      result[`${key} ${scale}`] = generateNotesFromScaleOrMode(key, scale);
     });
   });
 

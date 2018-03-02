@@ -1,26 +1,38 @@
 import assert from 'assert';
-import { generateNotesFromScale } from './scales';
+import { generateNotesFromScaleOrMode } from './scales';
 
-describe('generateNotesFromScale()', () => {
+describe('generateNotesFromScaleOrMode()', () => {
   it('should return the correct scales', () => {
     assert.deepEqual(
-      generateNotesFromScale('C', 'major'),
+      generateNotesFromScaleOrMode('C', 'major'),
       ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'],
     );
 
     assert.deepEqual(
-      generateNotesFromScale('G#', 'minor'),
+      generateNotesFromScaleOrMode('G#', 'minor'),
       ['G#', 'A#', 'B', 'C#', 'D#', 'E', 'F#', 'G#'],
     );
 
     assert.deepEqual(
-      generateNotesFromScale('A', 'harmonic minor'),
+      generateNotesFromScaleOrMode('A', 'harmonic minor'),
       ['A', 'B', 'C', 'D', 'E', 'F', 'G#', 'A'],
     );
 
     assert.deepEqual(
-      generateNotesFromScale('A', 'melodic minor'),
+      generateNotesFromScaleOrMode('A', 'melodic minor'),
       ['A', 'B', 'C', 'D', 'E', 'F#', 'G#', 'A'],
+    );
+  });
+
+  it('should return the correct modes', () => {
+    assert.deepEqual(
+      generateNotesFromScaleOrMode('C', 'ionian'),
+      ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'],
+    );
+
+    assert.deepEqual(
+      generateNotesFromScaleOrMode('G#', 'aeolian'),
+      ['G#', 'A#', 'B', 'C#', 'D#', 'E', 'F#', 'G#'],
     );
   });
 });
