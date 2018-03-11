@@ -6,3 +6,5 @@ dist/
 
 # Javascript
 node_modules/
+
+_dev
