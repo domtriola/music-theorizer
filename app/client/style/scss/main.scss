@@ -1,6 +1,5 @@
-// Reset
+// Reset for vanilla defaults
 @import 'reset';
 
-// UI
-@import 'ui/Note';
-@import 'ui/Scale';
+// Styles that apply to entire app
+@import 'general';
