@@ -9,7 +9,7 @@ export const generateNotesFromScaleOrMode = (root, scale) => {
 
   const result = [root];
   let stepTotal = 0;
-  merge(SCALES, MODES)[scale].forEach((step) => {
+  merge({}, SCALES, MODES)[scale].forEach((step) => {
     stepTotal += step;
     const nextNote = KEYS[(rootIndex + stepTotal) % KEYS.length];
 
