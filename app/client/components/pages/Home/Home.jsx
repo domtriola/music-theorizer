@@ -1,9 +1,9 @@
 import React from 'react';
 
-import ScaleGenerator from '../../widgets/ScaleGenerator/ScaleGenerator';
+import Scales from '../../widgets/Scales/Scales';
 
 export default () => (
   <div className="Home">
-    <ScaleGenerator />
+    <Scales />
   </div>
 );

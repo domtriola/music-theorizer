@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import KEYS from '../../../constants/keys';
 import SCALES from '../../../constants/scales';
+import MODES from '../../../constants/modes';
 
 import { updateScale } from '../../../actions/scale';
 
@@ -28,7 +29,7 @@ const propTypes = {
   updateScale: func.isRequired,
 };
 
-class ScaleGenerator extends React.Component {
+class Scales extends React.Component {
   constructor(props) {
     super(props);
 
@@ -46,7 +47,7 @@ class ScaleGenerator extends React.Component {
 
   render() {
     return (
-      <div className="ScaleGenerator">
+      <div className="Scales">
         <h2>
           Generate a Scale
         </h2>
@@ -62,15 +63,22 @@ class ScaleGenerator extends React.Component {
           value={this.props.scale}
           onChange={this.updateScale}
         />
+        -- or --
+        <Select
+          name="mode"
+          options={Object.keys(MODES)}
+          value={this.props.scale}
+          onChange={this.updateScale}
+        />
         <Scale notes={this.props.notes} />
       </div>
     );
   }
 }
 
-ScaleGenerator.propTypes = propTypes;
+Scales.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(ScaleGenerator);
+)(Scales);
