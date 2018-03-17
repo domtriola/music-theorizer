@@ -1,5 +1,5 @@
 {
-  "name": "music-theorizer",
+  "name": "music-in-theory",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,12 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/domtriola/music-theorizer.git"
+    "url": "https://github.com/domtriola/music-in-theory.git"
   },
   "author": "Dominick Triola",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/domtriola/music-theorizer/issues"
+    "url": "https://github.com/domtriola/music-in-theory/issues"
   },
   "homepage": "",
   "devDependencies": {

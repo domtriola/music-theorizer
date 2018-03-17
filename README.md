@@ -1,1 +1,1 @@
-# Music Theorizer
+# Music in Theory
