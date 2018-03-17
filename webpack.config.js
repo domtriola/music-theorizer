@@ -16,6 +16,13 @@ module.exports = {
           presets: ['env', 'react'],
         },
       },
+      {
+        test: /\.scss$/,
+        loader: 'sass-extract-loader',
+        options: {
+          plugins: ['minimal'],
+        },
+      },
     ],
   },
   resolve: {
