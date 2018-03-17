@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import styles from '../../../style/base';
+
 const { string } = PropTypes;
 const propTypes = {
   className: string.isRequired,
@@ -23,6 +25,7 @@ const StyledNote = styled(Note)`
   padding: 1rem;
   height: 4rem;
   width: 4rem;
+  background-color: ${styles.$accentColor};
 `;
 
 export default StyledNote;
